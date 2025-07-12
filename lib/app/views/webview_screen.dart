@@ -14,6 +14,13 @@ class WebViewScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: Padding(
+          padding: EdgeInsets.all(8.0),
+          child: CircleAvatar(
+            backgroundImage: AssetImage('assets/images/logo.png'),
+            backgroundColor: Colors.transparent,
+          ),
+        ),
         title: Text(
           'InfoLand',
           style: TextStyle(
@@ -24,6 +31,7 @@ class WebViewScreen extends StatelessWidget {
         backgroundColor: Color(0xFF4CAF50),
         elevation: 0,
       ),
+
       body: Column(
         children: [
           // Loading indicator
