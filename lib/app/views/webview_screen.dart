@@ -23,16 +23,6 @@ class WebViewScreen extends StatelessWidget {
         ),
         backgroundColor: Color(0xFF4CAF50),
         elevation: 0,
-        actions: [
-          IconButton(
-            icon: Icon(Icons.home, color: Colors.white),
-            onPressed: () => controller.goHome(),
-          ),
-          IconButton(
-            icon: Icon(Icons.refresh, color: Colors.white),
-            onPressed: () => controller.reload(),
-          ),
-        ],
       ),
       body: Column(
         children: [

@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
-
 import '../controller/splash_controller.dart';
 
 class SplashScreen extends StatelessWidget {
   final SplashController controller = Get.put(SplashController());
 
- SplashScreen({super.key});
+  SplashScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,10 +15,10 @@ class SplashScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            // Logo container
+            // Logo container with actual logo image
             Container(
-              width: 200,
-              height: 200,
+              width: 250,
+              height: 250,
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(20),
@@ -33,34 +31,15 @@ class SplashScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  // Globe icon
-                  Container(
-                    width: 60,
-                    height: 60,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      border: Border.all(color: Color(0xFF4CAF50), width: 2),
-                    ),
-                    child: Icon(
-                      Icons.public,
-                      color: Color(0xFF4CAF50),
-                      size: 30,
-                    ),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(20),
+                child: Padding(
+                  padding: EdgeInsets.all(20),
+                  child: Image.asset(
+                    'assets/images/logo.png',
+                    fit: BoxFit.contain,
                   ),
-                  SizedBox(height: 10),
-                  // "il" letters
-                  Text(
-                    'il',
-                    style: TextStyle(
-                      fontSize: 48,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.grey[300],
-                    ),
-                  ),
-                ],
+                ),
               ),
             ),
             SizedBox(height: 30),
@@ -88,6 +67,14 @@ class SplashScreen extends StatelessWidget {
             // Loading indicator
             CircularProgressIndicator(
               valueColor: AlwaysStoppedAnimation<Color>(Color(0xFF4CAF50)),
+            ),
+            SizedBox(height: 20),
+            Text(
+              'Loading...',
+              style: TextStyle(
+                fontSize: 14,
+                color: Colors.grey[600],
+              ),
             ),
           ],
         ),
