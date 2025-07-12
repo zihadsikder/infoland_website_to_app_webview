@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:webview_flutter/webview_flutter.dart';
@@ -37,13 +39,14 @@ class InfoLandWebViewController extends GetxController {
             _updateNavigationState();
           },
           onWebResourceError: (WebResourceError error) {
-            Get.snackbar(
-              'Error',
-              'Failed to load page: ${error.description}',
-              snackPosition: SnackPosition.BOTTOM,
-              backgroundColor: Colors.red,
-              colorText: Colors.white,
-            );
+            // Get.snackbar(
+            //   'Error',
+            //   'Failed to load page: ${error.description}',
+            //   snackPosition: SnackPosition.BOTTOM,
+            //   backgroundColor: Colors.red,
+            //   colorText: Colors.white,
+            // );
+            log( 'Failed to load page: ${error.description}');
           },
         ),
       )
